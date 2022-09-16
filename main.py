@@ -94,19 +94,19 @@ for page in range(len(final)):
         header = header + str(y+1) + " "
     print(header)
     for line in range(rows2):
-      if line > len(final[page])-1:
-        row = str(line+1) + ""
-      elif line + 1 < 10:
-        row = "0" + str(line+1) + " " + final[page][line]
+      if line + 1 < 10:
+        row = "0" + str(line+1) + " "
       else:
-        row = str(line+1) + " " + final[page][line]
+        row = str(line+1) + " "
+      if line <= len(final[page])-1:
+        row = row + final[page][line]
       print(row)
 
 #summary
 print("\n")
-pages = str(len(final)-1) + ""
-lines = str(len(final[-1])-2) + ""
-chars = str(len(final[-1][-2])/2) + ""
+pages = str(len(final)-1)
+lines = str(len(final[-1])-2)
+chars = str(len(final[-1][-2])/2) 
 if len(final)-1 == 1:
   pages = pages + " page,"
 else:
